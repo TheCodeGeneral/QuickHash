@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btnCopy = new System.Windows.Forms.Button();
             this.cmbHashAlgo = new System.Windows.Forms.ComboBox();
             this.lblHashResult = new System.Windows.Forms.Label();
@@ -72,6 +73,7 @@
             this.Controls.Add(this.btnCopy);
             this.Controls.Add(this.lblHashResult);
             this.Controls.Add(this.cmbHashAlgo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(850, 150);
             this.Name = "Form1";
             this.Text = "QuickHash";
