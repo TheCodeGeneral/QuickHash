@@ -16,8 +16,8 @@ namespace QuickHash
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            // Todo pass file(s) path
-            Application.Run(new Form1());
+            
+            Application.Run(new Form1(args[0]));
         }
     }
 }

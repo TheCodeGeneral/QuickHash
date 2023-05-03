@@ -28,69 +28,53 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblhashAlgo = new System.Windows.Forms.Label();
-            this.hashAlgoComboBox = new System.Windows.Forms.ComboBox();
+            this.btnCopy = new System.Windows.Forms.Button();
+            this.cmbHashAlgo = new System.Windows.Forms.ComboBox();
             this.lblHashResult = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // lblhashAlgo
+            // btnCopy
             // 
-            this.lblhashAlgo.AutoSize = true;
-            this.lblhashAlgo.Location = new System.Drawing.Point(13, 13);
-            this.lblhashAlgo.Name = "lblhashAlgo";
-            this.lblhashAlgo.Size = new System.Drawing.Size(78, 13);
-            this.lblhashAlgo.TabIndex = 0;
-            this.lblhashAlgo.Text = "Hash Algorithm";
+            this.btnCopy.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnCopy.Location = new System.Drawing.Point(375, 78);
+            this.btnCopy.Name = "btnCopy";
+            this.btnCopy.Size = new System.Drawing.Size(75, 23);
+            this.btnCopy.TabIndex = 3;
+            this.btnCopy.Text = "Copy";
+            this.btnCopy.UseVisualStyleBackColor = true;
+            this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
             // 
-            // hashAlgoComboBox
+            // cmbHashAlgo
             // 
-            this.hashAlgoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.hashAlgoComboBox.FormattingEnabled = true;
-            this.hashAlgoComboBox.Items.AddRange(new object[] {
-            "SHA1",
-            "SHA256",
-            "SHA384",
-            "SHA512",
-            "MD2",
-            "MD4",
-            "MD5 "});
-            this.hashAlgoComboBox.Location = new System.Drawing.Point(16, 30);
-            this.hashAlgoComboBox.Name = "hashAlgoComboBox";
-            this.hashAlgoComboBox.Size = new System.Drawing.Size(75, 21);
-            this.hashAlgoComboBox.TabIndex = 1;
-            this.hashAlgoComboBox.SelectedIndexChanged += new System.EventHandler(this.hashAlgoComboBox_SelectedIndexChanged);
+            this.cmbHashAlgo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.cmbHashAlgo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbHashAlgo.FormattingEnabled = true;
+            this.cmbHashAlgo.Location = new System.Drawing.Point(12, 78);
+            this.cmbHashAlgo.Name = "cmbHashAlgo";
+            this.cmbHashAlgo.Size = new System.Drawing.Size(75, 21);
+            this.cmbHashAlgo.TabIndex = 1;
             // 
             // lblHashResult
             // 
             this.lblHashResult.AutoSize = true;
-            this.lblHashResult.Location = new System.Drawing.Point(120, 38);
+            this.lblHashResult.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblHashResult.Location = new System.Drawing.Point(0, 0);
             this.lblHashResult.Name = "lblHashResult";
             this.lblHashResult.Size = new System.Drawing.Size(30, 13);
             this.lblHashResult.TabIndex = 2;
             this.lblHashResult.Text = "hash";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(150, 75);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Copy";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 111);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(834, 111);
+            this.Controls.Add(this.btnCopy);
             this.Controls.Add(this.lblHashResult);
-            this.Controls.Add(this.hashAlgoComboBox);
-            this.Controls.Add(this.lblhashAlgo);
+            this.Controls.Add(this.cmbHashAlgo);
+            this.MinimumSize = new System.Drawing.Size(850, 150);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "QuickHash";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -98,11 +82,9 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblhashAlgo;
+        private System.Windows.Forms.Button btnCopy;
+        private System.Windows.Forms.ComboBox cmbHashAlgo;
         private System.Windows.Forms.Label lblHashResult;
-        private System.Windows.Forms.ComboBox hashAlgoComboBox;
-        private System.Windows.Forms.Button button1;
     }
 }
 
