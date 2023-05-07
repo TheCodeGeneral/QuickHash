@@ -15,10 +15,9 @@ namespace QuickHash
 {
     public partial class Form1 : Form
     {
-        // Hashes currently supported
-        Dictionary<string, HashAlgorithm> hashAlgorithms;
         Dictionary<string, string> results;
         string filePath;
+        Dictionary<string, HashAlgorithm> hashAlgorithms;
         public Form1(string filePath)
         {
             InitializeComponent();
@@ -51,7 +50,9 @@ namespace QuickHash
             {
                 output += hashAlgo + ":    " + results[hashAlgo] + "\n";
             }
-            lblHashResult.Invoke((MethodInvoker)delegate {
+            // Update hash results label
+            lblHashResult.Invoke((MethodInvoker)delegate 
+            {
                 // Running on the UI thread
                 lblHashResult.Text = output;
             });
@@ -60,9 +61,9 @@ namespace QuickHash
         private Dictionary<string, string> GetHash(string filename)
         {
             results = new Dictionary<string, string>();
-            hashAlgorithms = new Dictionary<string, HashAlgorithm>() { { "SHA1", SHA1.Create() }, { "SHA256", SHA256.Create() }, { "SHA384", SHA384.Create() }, { "SHA512", SHA512.Create() }, { "MD5", MD5.Create() } };
+            
             byte[] fileBuf = File.ReadAllBytes(filePath);
-            foreach(string hashAlgo in hashAlgorithms.Keys)
+            Parallel.ForEach(hashAlgorithms.Keys, hashAlgo =>
             {
                 byte[] rawHash;
                 string hash = "";
@@ -74,7 +75,7 @@ namespace QuickHash
                     hash += b.ToString("x2");
                 }
                 results[hashAlgo] = hash;
-            }
+            });
 
             return results;
         }
