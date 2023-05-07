@@ -61,9 +61,9 @@
             this.lblHashResult.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblHashResult.Location = new System.Drawing.Point(0, 0);
             this.lblHashResult.Name = "lblHashResult";
-            this.lblHashResult.Size = new System.Drawing.Size(30, 13);
+            this.lblHashResult.Size = new System.Drawing.Size(50, 13);
             this.lblHashResult.TabIndex = 2;
-            this.lblHashResult.Text = "hash";
+            this.lblHashResult.Text = "loading...";
             // 
             // Form1
             // 
