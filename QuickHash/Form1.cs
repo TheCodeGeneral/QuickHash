@@ -15,7 +15,7 @@ namespace QuickHash
 {
     public partial class Form1 : Form
     {
-        Dictionary<string, string> results;
+        //Dictionary<string, string> results;
         string filePath;
         Dictionary<string, HashAlgorithm> hashAlgorithms;
         public Form1(string filePath)
@@ -33,51 +33,89 @@ namespace QuickHash
             }
             cmbHashAlgo.SelectedIndex = 0;
 
-            await Task.Run(() => displayResults());
+            await Task.Run(() => displayResults(this.filePath));
         }
         // Copy selected item in dropdown into clipboard
         private void btnCopy_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(this.results[cmbHashAlgo.Text]);
+            //Clipboard.SetText(this.results[cmbHashAlgo.Text]);
         }
         // Display results in lblHashResults
-        private async void displayResults()
+        private void displayResults(string filePath)
         {
-            results = GetHash(filePath);
+            byte[] fileBuf = File.ReadAllBytes(filePath);
 
-            string output = "";
-            foreach (string hashAlgo in results.Keys)
-            {
-                output += hashAlgo + ":    " + results[hashAlgo] + "\n";
-            }
+#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+
             // Update hash results label
-            lblHashResult.Invoke((MethodInvoker)delegate 
+            Task.Run(() =>
             {
-                // Running on the UI thread
-                lblHashResult.Text = output;
+                string sha1 = GetHash(fileBuf, SHA1.Create());
+                txtSha1.Invoke((MethodInvoker)delegate
+                {
+                    // Running on the UI thread
+                    txtSha1.Text = "Sha1:\t" + sha1;
+                });
             });
+
+            Task.Run(() =>
+            {
+                string sha256 = GetHash(fileBuf, SHA256.Create());
+                txtSha256.Invoke((MethodInvoker)delegate
+                {
+                    // Running on the UI thread
+                    txtSha256.Text = "Sha256:\t" + sha256;
+                });
+            });
+            Task.Run(() =>
+            {
+                string sha384 = GetHash(fileBuf, SHA384.Create());
+                txtSha384.Invoke((MethodInvoker)delegate
+                {
+                    // Running on the UI thread
+                    txtSha384.Text = "Sha384:\t" + sha384;
+                });
+            });
+            Task.Run(() =>
+            {
+                string sha512 = GetHash(fileBuf, SHA512.Create());
+                txtSha512.Invoke((MethodInvoker)delegate
+                {
+                    // Running on the UI thread
+                    txtSha512.Text = "Sha512:\t" + sha512;
+                });
+            });
+            Task.Run(() =>
+            {
+                string md5 = GetHash(fileBuf, MD5.Create());
+                txtMd5.Invoke((MethodInvoker)delegate
+                {
+                    // Running on the UI thread
+                    txtMd5.Text = "Md5:\t" + md5;
+                });
+            });
+#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
         }
         // Compute the file's hash
-        private Dictionary<string, string> GetHash(string filename)
+        private string GetHash(byte[] fileBuf, HashAlgorithm hashAlgo)
         {
-            results = new Dictionary<string, string>();
-            
-            byte[] fileBuf = File.ReadAllBytes(filePath);
-            Parallel.ForEach(hashAlgorithms.Keys, hashAlgo =>
+            string hash = "";
+            byte[] rawHash = hashAlgo.ComputeHash(fileBuf);
+
+            foreach (byte b in rawHash)
             {
-                byte[] rawHash;
-                string hash = "";
+                hash += b.ToString("x2");
+            }
 
-                rawHash = hashAlgorithms[hashAlgo].ComputeHash(fileBuf);
+            return hash;
+        }
 
-                foreach (byte b in rawHash)
-                {
-                    hash += b.ToString("x2");
-                }
-                results[hashAlgo] = hash;
-            });
-
-            return results;
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                displayResults(openFileDialog1.FileName);
+            }
         }
     }
 }
