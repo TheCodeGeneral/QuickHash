@@ -5,8 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QuickHash"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="QuickHash" Height="200" Width="875"
+        Icon="/icon.ico">
+    
     <Grid>
+        <DockPanel>
+            <Menu DockPanel.Dock="Top" Background="White">
+                <MenuItem Header="File">
+                    <MenuItem Header="Open" Click="mnuOpen_Click" />
+                    <MenuItem Header="Edit Preferences" Click="mnuOpen_Click" />
+                </MenuItem>
 
+
+            </Menu>
+        </DockPanel>
+        <TextBox x:Name="txtSha1" HorizontalAlignment="Left" Margin="10,20,0,0" TextWrapping="Wrap"   Text="Sha1:   " VerticalAlignment="Top" AllowDrop="False" IsReadOnly="True" BorderThickness="0"/>
+        <TextBox x:Name="txtSha256" HorizontalAlignment="Left" Margin="10,40,0,0" TextWrapping="Wrap" Text="Sha256: " VerticalAlignment="Top" AllowDrop="False" IsReadOnly="True" BorderThickness="0"/>
+        <TextBox x:Name="txtSha384" HorizontalAlignment="Left" Margin="10,60,0,0" TextWrapping="Wrap" Text="Sha384: " VerticalAlignment="Top" AllowDrop="False" IsReadOnly="True" BorderThickness="0"/>
+        <TextBox x:Name="txtSha512" HorizontalAlignment="Left" Margin="10,80,0,0" TextWrapping="Wrap" Text="Sha512: " VerticalAlignment="Top" AllowDrop="False" IsReadOnly="True" BorderThickness="0"/>
+        <TextBox x:Name="txtMd5" HorizontalAlignment="Left" Margin="10,100,0,0" TextWrapping="Wrap"   Text="MD5:    " VerticalAlignment="Top" AllowDrop="False" IsReadOnly="True" BorderThickness="0"/>
+
+        <Button x:Name="btnCopyAll" Content="Copy All" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="50,0,0,10" Click="btnCopyAll_Click" />
+        <Button x:Name="btnCopy" Content="Copy" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="-50,0,0,10" Click="btnCopy_Click" />
+        <Button x:Name="btnSearchOnline" Content="Search Online" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,10" Click="btnSearchOnline_Click" />
+        <ComboBox x:Name="cmbHashSelection" HorizontalAlignment="Left" Margin="10,0,0,10" VerticalAlignment="Bottom" Width="75" SelectedIndex="0">
+            <ComboBoxItem Content="Sha1"/>
+            <ComboBoxItem Content="Sha256"/>
+            <ComboBoxItem Content="Sha384"/>
+            <ComboBoxItem Content="Sha512"/>
+            <ComboBoxItem Content="Md5"/>
+        </ComboBox>
     </Grid>
 </Window>

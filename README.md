@@ -1,10 +1,10 @@
 # QuickHash
 
-QuickHash is a small C# project that creates a window displaying the hash values for a specified program. It is built with WinForms and is designed to help users verify the integrity of a program by comparing the hash values provided by the developer with the hash values generated on their local machine.
+QuickHash is a small C# project that creates a window displaying the hash values for a specified program. It is built with Microsoft's WPF and is designed to help users verify the integrity of a program by comparing the hash values provided by the developer with the hash values generated on their local machine.
 
 ## Installation
 
-To use QuickHash, simply download the installer file from the releases page on GitHub and run it on your Windows machine. No installation is required.
+To use QuickHash, simply download the installer file from the releases page on GitHub and run it on your Windows machine.
 
 ## Usage
 
@@ -18,7 +18,8 @@ To use QuickHash, follow these steps:
 
 ## Contributing
 
-Contributions to QuickHash are welcome and encouraged! If you find a bug or have a feature request, please open an issue on GitHub. If you would like to contribute code, please fork the repository and submit a pull request with your changes. 
+Contributions to QuickHash are welcome and encouraged! If you find a bug or have a feature request, please open an issue on GitHub. If you would like to contribute code, please fork the repository and submit a pull request with your changes.  
+While not required, the [Microsoft Visual Studio Installer Projects](https://marketplace.visualstudio.com/items?itemName=VisualStudioClient.MicrosoftVisualStudio2022InstallerProjects) extension is required to make changes to the installer.
 
 ## License
 
