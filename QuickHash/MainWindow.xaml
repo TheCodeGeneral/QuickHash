@@ -5,55 +5,53 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QuickHash"
         mc:Ignorable="d"
-        Title="QuickHash" Height="200" Width="875"
-        Icon="/icon.ico">
-
+        Title="QuickHash" Height="225" Width="900"
+        Icon="/icon.ico" MinWidth="900" MinHeight="225">
     <Grid>
         <DockPanel VerticalAlignment="Top">
             <Menu DockPanel.Dock="Top" Background="White">
                 <MenuItem Header="File">
                     <MenuItem Header="Open" Click="mnuOpen_Click" />
-                    <MenuItem Header="Edit Preferences" Click="mnuOpen_Click" />
+                    <MenuItem Header="Edit Preferences" Click="mnuEditPrefs_Click" />
                 </MenuItem>
             </Menu>
         </DockPanel>
-        <Canvas HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0">
-            <StackPanel Canvas.Top="20" Width="850" HorizontalAlignment="Left" VerticalAlignment="Center">
-                <DockPanel HorizontalAlignment="Left" VerticalAlignment="Top">
-                    <Label DockPanel.Dock="Left" Content="Sha1:" Width="50"/>
-                    <TextBox x:Name="txtSha1" DockPanel.Dock="Left" HorizontalAlignment="Left" TextWrapping="Wrap" Text="vvhhbjhbjhj" AllowDrop="False" IsReadOnly="True" BorderThickness="0" VerticalContentAlignment="Center" />
-                </DockPanel>
-                <DockPanel HorizontalAlignment="Left" VerticalAlignment="Top">
-                    <Label DockPanel.Dock="Left" Content="Sha256:" Width="50" />
-                    <TextBox x:Name="txtSha256" DockPanel.Dock="Left" HorizontalAlignment="Left" TextWrapping="Wrap" Text="vvhhbjhbjhj" AllowDrop="False" IsReadOnly="True" BorderThickness="0" VerticalContentAlignment="Center" />
-                </DockPanel>
-                <DockPanel HorizontalAlignment="Left" VerticalAlignment="Top">
-                    <Label DockPanel.Dock="Left" Content="Sha384:" Width="50"/>
-                    <TextBox x:Name="txtSha384" DockPanel.Dock="Left" HorizontalAlignment="Left" TextWrapping="Wrap" Text="vvhhbjhbjhj" AllowDrop="False" IsReadOnly="True" BorderThickness="0" VerticalContentAlignment="Center" />
-                </DockPanel>
-                <DockPanel HorizontalAlignment="Left" VerticalAlignment="Top">
-                    <Label DockPanel.Dock="Left" Content="Sha512:" Width="50"/>
-                    <TextBox x:Name="txtSha512" DockPanel.Dock="Left" HorizontalAlignment="Left" TextWrapping="Wrap" Text="vvhhbjhbjhj" AllowDrop="False" IsReadOnly="True" BorderThickness="0" VerticalContentAlignment="Center" />
-                </DockPanel>
-                <DockPanel HorizontalAlignment="Left" VerticalAlignment="Top">
-                    <Label DockPanel.Dock="Left" Content="MD5:" Width="50"/>
-                    <TextBox x:Name="txtMd5" DockPanel.Dock="Left" HorizontalAlignment="Left" TextWrapping="Wrap" Text="vvhhbjhbjhj" AllowDrop="False" IsReadOnly="True" BorderThickness="0" VerticalContentAlignment="Center" />
-                </DockPanel>
-                <UniformGrid VerticalAlignment="Bottom" Rows="1">
+        <UniformGrid Rows="6" Margin="10,20,10,10" >
+            <DockPanel HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Label DockPanel.Dock="Left" Content="Sha1:" Width="50"/>
+                <TextBox x:Name="txtSha1" DockPanel.Dock="Left" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" AllowDrop="False" IsReadOnly="True" BorderThickness="0" VerticalContentAlignment="Center" />
+            </DockPanel>
+            <DockPanel HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Label DockPanel.Dock="Left" Content="Sha256:" Width="50" />
+                <TextBox x:Name="txtSha256" DockPanel.Dock="Left" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" AllowDrop="False" IsReadOnly="True" BorderThickness="0" VerticalContentAlignment="Center" />
+            </DockPanel>
+            <DockPanel HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Label DockPanel.Dock="Left" Content="Sha384:" Width="50"/>
+                <TextBox x:Name="txtSha384" DockPanel.Dock="Left" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" AllowDrop="False" IsReadOnly="True" BorderThickness="0" VerticalContentAlignment="Center" />
+            </DockPanel>
+            <DockPanel HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Label DockPanel.Dock="Left" Content="Sha512:" Width="50"/>
+                <TextBox x:Name="txtSha512" DockPanel.Dock="Left" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" AllowDrop="False" IsReadOnly="True" BorderThickness="0" VerticalContentAlignment="Center" />
+            </DockPanel>
+            <DockPanel HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Label DockPanel.Dock="Left" Content="MD5:" Width="50"/>
+                <TextBox x:Name="txtMd5" DockPanel.Dock="Left" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" AllowDrop="False" IsReadOnly="True" BorderThickness="0" VerticalContentAlignment="Center" />
+            </DockPanel>
+            <UniformGrid VerticalAlignment="Bottom" Rows="1">
 
-                    <ComboBox x:Name="cmbHashSelection" Width="75" SelectedIndex="0" HorizontalAlignment="Left">
-                        <ComboBoxItem Content="Sha1"/>
-                        <ComboBoxItem Content="Sha256"/>
-                        <ComboBoxItem Content="Sha384"/>
-                        <ComboBoxItem Content="Sha512"/>
-                        <ComboBoxItem Content="Md5"/>
-                    </ComboBox>
+                <ComboBox x:Name="cmbHashSelection" Width="75" SelectedIndex="0" HorizontalAlignment="Left">
+                    <ComboBoxItem Content="Sha1"/>
+                    <ComboBoxItem Content="Sha256"/>
+                    <ComboBoxItem Content="Sha384"/>
+                    <ComboBoxItem Content="Sha512"/>
+                    <ComboBoxItem Content="Md5"/>
+                </ComboBox>
 
-                    <Button x:Name="btnCopy" Content="Copy" Click="btnCopy_Click" HorizontalAlignment="Right" Margin="0,0,5,0" />
-                    <Button x:Name="btnCopyAll" Content="Copy All"  Click="btnCopyAll_Click" HorizontalAlignment="Left" Margin="5,0,0,0" />
-                    <Button x:Name="btnSearchOnline" Content="Search Online" Click="btnSearchOnline_Click" Grid.Column="3" HorizontalAlignment="Right" />
-                </UniformGrid>
-            </StackPanel>
-        </Canvas>
+                <Button x:Name="btnCopy" Content="Copy" Click="btnCopy_Click" HorizontalAlignment="Right" Margin="0,0,5,0" />
+                <Button x:Name="btnCopyAll" Content="Copy All"  Click="btnCopyAll_Click" HorizontalAlignment="Left" Margin="5,0,0,0" />
+                <Button x:Name="btnSearchOnline" Content="Search Online" Click="btnSearchOnline_Click" Grid.Column="3" HorizontalAlignment="Right" />
+            </UniformGrid>
+        </UniformGrid>
     </Grid>
+
 </Window>
