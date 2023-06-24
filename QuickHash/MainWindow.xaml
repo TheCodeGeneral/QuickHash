@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:QuickHash"
         mc:Ignorable="d"
         Title="QuickHash" Height="225" Width="900"
-        Icon="/icon.ico" MinWidth="900" MinHeight="225">
+        Icon="/icon.ico" MinWidth="910" MinHeight="225">
     <Grid>
         <DockPanel VerticalAlignment="Top">
             <Menu DockPanel.Dock="Top" Background="White">
