@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.IO.Pipes;
 using System.Linq;
 using System.Runtime.Intrinsics.Arm;
 using System.Security.Cryptography;
@@ -24,8 +25,20 @@ namespace QuickHash
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public MainWindow(string filepath = "", bool search = false)
         {
+            if(filepath != "")
+            {
+                if(search)
+                {
+                    SearchOnline(Hash(filepath));
+                    System.Windows.Application.Current.Shutdown();
+                }
+                else
+                {
+                    OpenFile(filepath);
+                }
+            }
             InitializeComponent();
         }
         // Compute hash of provided file and update the corresponding labels
@@ -80,7 +93,7 @@ namespace QuickHash
 #pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
         }
 
-
+        
         // Compute hash of provided file and update the corresponding labels
         private void HashAll(Stream fileStream)
         {
@@ -93,36 +106,28 @@ namespace QuickHash
                 {
                     txtSha1.Text = sha1;
                 });
-            });
-            Task.Run(() =>
-            {
+
                 byte[] sha256Hash = SHA256.HashData(fileStream);
                 string sha256 = ConvertHash(ref sha256Hash);
                 this.Dispatcher.Invoke(() =>
                 {
                     txtSha256.Text = sha256;
                 });
-            });
-            Task.Run(() =>
-            {
+
                 byte[] sha384Hash = SHA384.HashData(fileStream);
                 string sha384 = ConvertHash(ref sha384Hash);
                 this.Dispatcher.Invoke(() =>
                 {
                     txtSha384.Text = sha384;
                 });
-            });
-            Task.Run(() =>
-            {
+
                 byte[] sha512Hash = SHA512.HashData(fileStream);
                 string sha512 = ConvertHash(ref sha512Hash);
                 this.Dispatcher.Invoke(() =>
                 {
                     txtSha512.Text = sha512;
                 });
-            });
-            Task.Run(() =>
-            {
+
                 byte[] md5Hash = MD5.HashData(fileStream);
                 string md5 = ConvertHash(ref md5Hash);
                 this.Dispatcher.Invoke(() =>
@@ -133,7 +138,13 @@ namespace QuickHash
 #pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
         }
 
+        private string Hash(string filepath)
+        {
+            FileStream f = File.OpenRead(filepath);
 
+            byte[] sha1Hash = SHA1.HashData(f);
+            return ConvertHash(ref sha1Hash);
+        }
         // Convert the file's hash into a string
         private string ConvertHash(ref byte[] rawHash)
         {
@@ -148,21 +159,29 @@ namespace QuickHash
         }
         private void mnuOpen_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            if (openFileDialog.ShowDialog() == true)
+            OpenFile();
+        }
+        private void OpenFile(string filePath = "")
+        {
+            if(filePath == "")
             {
-                FileInfo fi = new(openFileDialog.FileName);
-                if (fi.Length < 2000000000)
-                { 
-                    HashAll(File.ReadAllBytes(openFileDialog.FileName));
-                }
-                else
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+                if (openFileDialog.ShowDialog() == true)
                 {
-                    HashAll(File.OpenRead(openFileDialog.FileName));
+                    filePath = openFileDialog.FileName;
                 }
             }
-        }
 
+            FileInfo fi = new(filePath);
+            if (fi.Length < 2000000000)
+            {
+                HashAll(File.ReadAllBytes(filePath));
+            }
+            else
+            {
+                HashAll(File.OpenRead(filePath));
+            }
+        }
         private void btnCopyAll_Click(object sender, RoutedEventArgs e)
         {
             string allHashes = "Sha1:\t" + txtSha1.Text +
@@ -175,9 +194,17 @@ namespace QuickHash
 
         private void btnSearchOnline_Click(object sender, RoutedEventArgs e)
         {
+            SearchOnline();
+        }
+        private void SearchOnline(string hash = "")
+        {
+            if(hash == "")
+            {
+                hash = GetSelectedHash();
+            }
             try
             {
-                System.Diagnostics.Process.Start("http://www.virustotal.com/gui/file/" + getSelectedHash());
+                System.Diagnostics.Process.Start("cmd", "/c start http://www.virustotal.com/gui/file/" + hash);
             }
             catch (System.ComponentModel.Win32Exception noBrowser)
             {
@@ -189,12 +216,11 @@ namespace QuickHash
                 MessageBox.Show(other.Message);
             }
         }
-
         private void btnCopy_Click(object sender, RoutedEventArgs e)
         {
-            Clipboard.SetText(getSelectedHash());
+            Clipboard.SetText(GetSelectedHash());
         }
-        private string getSelectedHash()
+        private string GetSelectedHash()
         {
             switch (cmbHashSelection.SelectedIndex)
             {

@@ -43,6 +43,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -59,6 +67,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -222,6 +238,178 @@
                                 {
                                 }
                             }
+                            "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_EF47C77C4EC74A029350A91AB54B45F9"
+                            {
+                            "Name" = "8:Microsoft"
+                            "Condition" = "8:"
+                            "AlwaysCreate" = "11:FALSE"
+                            "DeleteAtUninstall" = "11:FALSE"
+                            "Transitive" = "11:FALSE"
+                                "Keys"
+                                {
+                                    "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_6F61A81E13C14497B240D70C04E041A7"
+                                    {
+                                    "Name" = "8:Windows"
+                                    "Condition" = "8:"
+                                    "AlwaysCreate" = "11:FALSE"
+                                    "DeleteAtUninstall" = "11:FALSE"
+                                    "Transitive" = "11:FALSE"
+                                        "Keys"
+                                        {
+                                            "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_77153DCB9D1F49549C0B3C254BD1EBEF"
+                                            {
+                                            "Name" = "8:CurrentVersion"
+                                            "Condition" = "8:"
+                                            "AlwaysCreate" = "11:FALSE"
+                                            "DeleteAtUninstall" = "11:FALSE"
+                                            "Transitive" = "11:FALSE"
+                                                "Keys"
+                                                {
+                                                    "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_5BFB014608914FAF954AF6247F824592"
+                                                    {
+                                                    "Name" = "8:Explorer"
+                                                    "Condition" = "8:"
+                                                    "AlwaysCreate" = "11:FALSE"
+                                                    "DeleteAtUninstall" = "11:FALSE"
+                                                    "Transitive" = "11:FALSE"
+                                                        "Keys"
+                                                        {
+                                                            "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_23268B5BE2B74FCE8DC61315F4E87774"
+                                                            {
+                                                            "Name" = "8:CommandStore"
+                                                            "Condition" = "8:"
+                                                            "AlwaysCreate" = "11:FALSE"
+                                                            "DeleteAtUninstall" = "11:FALSE"
+                                                            "Transitive" = "11:FALSE"
+                                                                "Keys"
+                                                                {
+                                                                    "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_16E7F9F5716E4E669A9A49C6EEBBAF33"
+                                                                    {
+                                                                    "Name" = "8:shell"
+                                                                    "Condition" = "8:"
+                                                                    "AlwaysCreate" = "11:FALSE"
+                                                                    "DeleteAtUninstall" = "11:FALSE"
+                                                                    "Transitive" = "11:FALSE"
+                                                                        "Keys"
+                                                                        {
+                                                                            "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_01C49D1F453347E782D4A8EE30C5EDC8"
+                                                                            {
+                                                                            "Name" = "8:QuickHash.OpenFile"
+                                                                            "Condition" = "8:"
+                                                                            "AlwaysCreate" = "11:FALSE"
+                                                                            "DeleteAtUninstall" = "11:FALSE"
+                                                                            "Transitive" = "11:FALSE"
+                                                                                "Keys"
+                                                                                {
+                                                                                    "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_42C32EDC7BD645E49B622180CB5264C9"
+                                                                                    {
+                                                                                    "Name" = "8:command"
+                                                                                    "Condition" = "8:"
+                                                                                    "AlwaysCreate" = "11:FALSE"
+                                                                                    "DeleteAtUninstall" = "11:FALSE"
+                                                                                    "Transitive" = "11:FALSE"
+                                                                                        "Keys"
+                                                                                        {
+                                                                                        }
+                                                                                        "Values"
+                                                                                        {
+                                                                                            "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_6EA6E629A87943B99B2F0F74E353788A"
+                                                                                            {
+                                                                                            "Name" = "8:"
+                                                                                            "Condition" = "8:"
+                                                                                            "Transitive" = "11:FALSE"
+                                                                                            "ValueTypes" = "3:1"
+                                                                                            "Value" = "8:\"[TARGETDIR]QuickHash.exe\" \"%1\""
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                                "Values"
+                                                                                {
+                                                                                    "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_A6BA74300BD5450FBA5F1C29AECBB083"
+                                                                                    {
+                                                                                    "Name" = "8:MUIVerb"
+                                                                                    "Condition" = "8:"
+                                                                                    "Transitive" = "11:FALSE"
+                                                                                    "ValueTypes" = "3:1"
+                                                                                    "Value" = "8:Open File"
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                            "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_A8E220E4AF0E4F81B7F399F59E13EB99"
+                                                                            {
+                                                                            "Name" = "8:QuickHash.SearchFile"
+                                                                            "Condition" = "8:"
+                                                                            "AlwaysCreate" = "11:FALSE"
+                                                                            "DeleteAtUninstall" = "11:FALSE"
+                                                                            "Transitive" = "11:FALSE"
+                                                                                "Keys"
+                                                                                {
+                                                                                    "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_6195BC459AFC4AFFB8CEDEC42572778D"
+                                                                                    {
+                                                                                    "Name" = "8:command"
+                                                                                    "Condition" = "8:"
+                                                                                    "AlwaysCreate" = "11:FALSE"
+                                                                                    "DeleteAtUninstall" = "11:FALSE"
+                                                                                    "Transitive" = "11:FALSE"
+                                                                                        "Keys"
+                                                                                        {
+                                                                                        }
+                                                                                        "Values"
+                                                                                        {
+                                                                                            "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_E78B0FDFB4E04D47A6D1F5D9AF5130F3"
+                                                                                            {
+                                                                                            "Name" = "8:"
+                                                                                            "Condition" = "8:"
+                                                                                            "Transitive" = "11:FALSE"
+                                                                                            "ValueTypes" = "3:1"
+                                                                                            "Value" = "8:\"[TARGETDIR]QuickHash.exe\" \"%1\" -s"
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                                "Values"
+                                                                                {
+                                                                                    "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_17DF0283BD08457F904641E11C394602"
+                                                                                    {
+                                                                                    "Name" = "8:MUIVerb"
+                                                                                    "Condition" = "8:"
+                                                                                    "Transitive" = "11:FALSE"
+                                                                                    "ValueTypes" = "3:1"
+                                                                                    "Value" = "8:Search File"
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                        "Values"
+                                                                        {
+                                                                        }
+                                                                    }
+                                                                }
+                                                                "Values"
+                                                                {
+                                                                }
+                                                            }
+                                                        }
+                                                        "Values"
+                                                        {
+                                                        }
+                                                    }
+                                                }
+                                                "Values"
+                                                {
+                                                }
+                                            }
+                                        }
+                                        "Values"
+                                        {
+                                        }
+                                    }
+                                }
+                                "Values"
+                                {
+                                }
+                            }
                         }
                         "Values"
                         {
@@ -294,38 +482,16 @@
                                     "Transitive" = "11:FALSE"
                                         "Keys"
                                         {
-                                            "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_5085074F326F4EA8B7C773A46679F5FC"
-                                            {
-                                            "Name" = "8:command"
-                                            "Condition" = "8:"
-                                            "AlwaysCreate" = "11:FALSE"
-                                            "DeleteAtUninstall" = "11:FALSE"
-                                            "Transitive" = "11:FALSE"
-                                                "Keys"
-                                                {
-                                                }
-                                                "Values"
-                                                {
-                                                    "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_635256EF11F0409AA26CD96E42ADFB79"
-                                                    {
-                                                    "Name" = "8:"
-                                                    "Condition" = "8:"
-                                                    "Transitive" = "11:FALSE"
-                                                    "ValueTypes" = "3:1"
-                                                    "Value" = "8:\"[TARGETDIR]QuickHash.exe\" \"%V\""
-                                                    }
-                                                }
-                                            }
                                         }
                                         "Values"
                                         {
-                                            "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_1E067E3F1E494CDF955E68D008E9413E"
+                                            "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_133BB6301A4343B8A29F8A926B57E9A9"
                                             {
-                                            "Name" = "8:"
+                                            "Name" = "8:SubCommands"
                                             "Condition" = "8:"
                                             "Transitive" = "11:FALSE"
                                             "ValueTypes" = "3:1"
-                                            "Value" = "8:Open with QuickHash"
+                                            "Value" = "8:QuickHash.OpenFIle;QuickHash.SearchFile"
                                             }
                                             "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_546A309C453A4F7EA854309E0D75AF81"
                                             {
@@ -334,6 +500,22 @@
                                             "Transitive" = "11:FALSE"
                                             "ValueTypes" = "3:1"
                                             "Value" = "8:[TARGETDIR]icon.ico"
+                                            }
+                                            "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_C44CEE13420144C39CF40434345594EA"
+                                            {
+                                            "Name" = "8:"
+                                            "Condition" = "8:"
+                                            "Transitive" = "11:FALSE"
+                                            "ValueTypes" = "3:1"
+                                            "Value" = "8:"
+                                            }
+                                            "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_DA06D66CC6F9406AA514AD961E0D6794"
+                                            {
+                                            "Name" = "8:MUIVerb"
+                                            "Condition" = "8:"
+                                            "Transitive" = "11:FALSE"
+                                            "ValueTypes" = "3:1"
+                                            "Value" = "8:QuickHash"
                                             }
                                         }
                                     }
@@ -768,7 +950,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_9FE7956DF427426887032F42290FE1F1"
             {
-            "SourcePath" = "8:..\\QuickHash\\obj\\Debug\\net7.0-windows\\QuickHash.dll"
+            "SourcePath" = "8:..\\QuickHash\\obj\\Release\\net7.0-windows\\QuickHash.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_B30427782E7147B1B18D404F9A95A5B5"
