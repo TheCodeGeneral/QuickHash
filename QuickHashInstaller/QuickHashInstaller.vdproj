@@ -15,13 +15,19 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_63C2E9758CFB4546BD7DA02F0ECFEDE9"
+        "MsmKey" = "8:_2A8F26E207704C15A54ADE0CAF334788"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_9FE7956DF427426887032F42290FE1F1"
+        "MsmKey" = "8:_5A5E9C8F5A8B43ADB182F6762B9D2A74"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_63C2E9758CFB4546BD7DA02F0ECFEDE9"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -50,6 +56,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.NetCore.DesktopRuntime.7.0.x64"
+                    {
+                    "Name" = "8:.NET Desktop Runtime 7.0.4 (x64)"
+                    "ProductCode" = "8:Microsoft.NetCore.DesktopRuntime.7.0.x64"
+                    }
+                }
             }
         }
         "Release"
@@ -74,6 +88,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
     }
@@ -102,10 +124,38 @@
                 "Architecture" = "2:0"
                 "Runtime" = "2:0"
                 }
+                "{A06ECF26-33A3-4562-8140-9B0E340D4F24}:_F6F030737FAB48C49C2FA05A99116880"
+                {
+                "Name" = "8:.NET Framework"
+                "Message" = "8:[VSDNETMSG]"
+                "FrameworkVersion" = "8:.NETFramework,Version=v4.7.2"
+                "AllowLaterVersions" = "11:FALSE"
+                "InstallUrl" = "8:http://go.microsoft.com/fwlink/?LinkId=863262"
+                }
             }
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5A5E9C8F5A8B43ADB182F6762B9D2A74"
+            {
+            "SourcePath" = "8:..\\QuickHash\\bin\\Release\\net7.0-windows\\QuickHash.exe"
+            "TargetName" = "8:QuickHash.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_B30427782E7147B1B18D404F9A95A5B5"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_63C2E9758CFB4546BD7DA02F0ECFEDE9"
             {
             "SourcePath" = "8:..\\icon.ico"
@@ -182,15 +232,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:QuickHash"
-        "ProductCode" = "8:{5C9C86B3-449C-4DBA-B2A3-BA4FC21CB450}"
-        "PackageCode" = "8:{492C311D-11C5-492E-B1B7-852D28289736}"
+        "ProductCode" = "8:{54BDD70A-515D-441B-B2B6-97F4C1B964DB}"
+        "PackageCode" = "8:{319E5B23-E2B8-4E11-B5F2-F7050D82D430}"
         "UpgradeCode" = "8:{B6EF6B7B-73B2-4B44-A7E1-BFA0636952C2}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:1.1.0"
+        "ProductVersion" = "8:1.1.1"
         "Manufacturer" = "8:TheCodeGeneral"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -297,7 +347,7 @@
                                                                             "Name" = "8:QuickHash.OpenFile"
                                                                             "Condition" = "8:"
                                                                             "AlwaysCreate" = "11:FALSE"
-                                                                            "DeleteAtUninstall" = "11:FALSE"
+                                                                            "DeleteAtUninstall" = "11:TRUE"
                                                                             "Transitive" = "11:FALSE"
                                                                                 "Keys"
                                                                                 {
@@ -326,9 +376,9 @@
                                                                                 }
                                                                                 "Values"
                                                                                 {
-                                                                                    "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_A6BA74300BD5450FBA5F1C29AECBB083"
+                                                                                    "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_364D5BCE514B4EC8844E5A3E0E2187C6"
                                                                                     {
-                                                                                    "Name" = "8:MUIVerb"
+                                                                                    "Name" = "8:"
                                                                                     "Condition" = "8:"
                                                                                     "Transitive" = "11:FALSE"
                                                                                     "ValueTypes" = "3:1"
@@ -341,7 +391,7 @@
                                                                             "Name" = "8:QuickHash.SearchFile"
                                                                             "Condition" = "8:"
                                                                             "AlwaysCreate" = "11:FALSE"
-                                                                            "DeleteAtUninstall" = "11:FALSE"
+                                                                            "DeleteAtUninstall" = "11:TRUE"
                                                                             "Transitive" = "11:FALSE"
                                                                                 "Keys"
                                                                                 {
@@ -372,7 +422,7 @@
                                                                                 {
                                                                                     "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_17DF0283BD08457F904641E11C394602"
                                                                                     {
-                                                                                    "Name" = "8:MUIVerb"
+                                                                                    "Name" = "8:"
                                                                                     "Condition" = "8:"
                                                                                     "Transitive" = "11:FALSE"
                                                                                     "ValueTypes" = "3:1"
@@ -478,7 +528,7 @@
                                     "Name" = "8:OpenWithQuickHash"
                                     "Condition" = "8:"
                                     "AlwaysCreate" = "11:FALSE"
-                                    "DeleteAtUninstall" = "11:FALSE"
+                                    "DeleteAtUninstall" = "11:TRUE"
                                     "Transitive" = "11:FALSE"
                                         "Keys"
                                         {
@@ -500,14 +550,6 @@
                                             "Transitive" = "11:FALSE"
                                             "ValueTypes" = "3:1"
                                             "Value" = "8:[TARGETDIR]icon.ico"
-                                            }
-                                            "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_C44CEE13420144C39CF40434345594EA"
-                                            {
-                                            "Name" = "8:"
-                                            "Condition" = "8:"
-                                            "Transitive" = "11:FALSE"
-                                            "ValueTypes" = "3:1"
-                                            "Value" = "8:"
                                             }
                                             "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_DA06D66CC6F9406AA514AD961E0D6794"
                                             {
@@ -948,7 +990,7 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_9FE7956DF427426887032F42290FE1F1"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_2A8F26E207704C15A54ADE0CAF334788"
             {
             "SourcePath" = "8:..\\QuickHash\\obj\\Release\\net7.0-windows\\QuickHash.dll"
             "TargetName" = "8:"

@@ -187,7 +187,7 @@ namespace QuickHash
             string allHashes = "Sha1:\t" + txtSha1.Text +
                 "\nSha256:\t" + txtSha256.Text +
                 "\nSha384:\t" + txtSha384.Text +
-                "\nSha512:\t" + txtSha512 +
+                "\nSha512:\t" + txtSha512.Text +
                 "\nMd5:\t" + txtMd5.Text;
             Clipboard.SetText(allHashes);
         }
